@@ -20,6 +20,7 @@ public class AHBottomNavigationItem {
 	private String title = "";
 	private Drawable drawable;
 	private int color = Color.GRAY;
+	private boolean useSelector = false;
 	
 	private
 	@StringRes
@@ -30,6 +31,13 @@ public class AHBottomNavigationItem {
 	private
 	@ColorRes
 	int colorRes = 0;
+
+	public AHBottomNavigationItem(@StringRes  int title, @DrawableRes int resource, boolean useSelector)
+	{
+		this.titleRes = title;
+		this.drawableRes = resource;
+		this.useSelector = useSelector;
+	}
 	
 	/**
 	 * Constructor
@@ -107,7 +115,17 @@ public class AHBottomNavigationItem {
 		this.titleRes = titleRes;
 		this.title = "";
 	}
-	
+
+	public boolean isUseSelector()
+	{
+		return useSelector;
+	}
+
+	public void setUseSelector(boolean useSelector)
+	{
+		this.useSelector = useSelector;
+	}
+
 	public int getColor(Context context) {
 		if (colorRes != 0) {
 			return ContextCompat.getColor(context, colorRes);
