@@ -494,7 +494,7 @@ public class AHBottomNavigation extends FrameLayout {
 							updateItems(itemIndex, true);
 						}
 					});
-					icon.setSelected(true);
+					icon.setSelected(current);
 					title.setTextColor(current ? itemActiveColor : itemInactiveColor);
 					view.setSoundEffectsEnabled(soundEffectsEnabled);
 				}
@@ -641,7 +641,7 @@ public class AHBottomNavigation extends FrameLayout {
 			{
 				if (itemsEnabledStates[i])
 				{
-					icon.setSelected(true);
+					icon.setSelected(currentItem == i);
 					title.setTextColor(currentItem == i ? itemActiveColor : itemInactiveColor);
 					title.setAlpha(currentItem == i ? 1 : 0);
 					view.setOnClickListener(new OnClickListener()
