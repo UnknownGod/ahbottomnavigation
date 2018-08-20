@@ -809,7 +809,7 @@ public class AHBottomNavigation extends FrameLayout {
 				else
 				{
 					// icon.setSelected(false);
-					icon.setImageDrawable(items.get(itemIndex).getDrawable(context));
+					icon.setImageDrawable(items.get(currentItem).getDrawable(context));
 					icon.requestLayout();
 				}
 			}
@@ -953,14 +953,14 @@ public class AHBottomNavigation extends FrameLayout {
 
 				AHHelper.updateAlpha(title, 1, 0);
 
-				if (!items.get(itemIndex).isUseSelector())
+				if (!items.get(currentItem).isUseSelector())
 				{
 					AHHelper.updateDrawableColor(context, items.get(currentItem).getDrawable(context), icon,
 							itemActiveColor, itemInactiveColor, forceTint);
 				}
 				else
 				{
-					icon.setImageDrawable(items.get(itemIndex).getDrawable(context));
+					icon.setImageDrawable(items.get(currentItem).getDrawable(context));
 					icon.requestLayout();
 				}
 			}
